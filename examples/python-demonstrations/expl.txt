@@ -1,0 +1,92 @@
+Sure! Let me explain the code step by step:
+
+### **Code Breakdown:**
+
+```python
+import requests
+```
+- This imports the `requests` module, which is used to send HTTP requests in Python.
+
+---
+
+```python
+def fetch_todos():
+```
+- Defines a function named `fetch_todos` that will fetch the TODOs from the API.
+
+---
+
+```python
+    url = "https://jsonplaceholder.typicode.com/todos"
+```
+- Stores the API endpoint URL in the `url` variable. This API provides fake TODO data.
+
+---
+
+```python
+    response = requests.get(url)
+```
+- Sends a **GET** request to the API and stores the response in the `response` variable.
+
+---
+
+```python
+    if response.status_code == 200:
+```
+- Checks if the response status code is `200`, which means the request was **successful**.
+
+---
+
+```python
+        todos = response.json()
+```
+- Converts the JSON response data into a Python list of dictionaries and stores it in `todos`.
+
+---
+
+```python
+        for todo in todos[:10]:
+```
+- Loops through the **first 10 TODO items** (`todos[:10]` means "get only the first 10 elements").
+
+---
+
+```python
+            print(f"ID: {todo['id']}, Title: {todo['title']}, Completed: {todo['completed']}")
+```
+- For each TODO item, it prints:
+  - `ID`
+  - `Title`
+  - `Completed` status (True/False)
+
+---
+
+```python
+    else:
+        print("Failed to fetch data. Status code:", response.status_code)
+```
+- If the API request fails (status code is **not** 200), it prints an error message with the actual status code.
+
+---
+
+```python
+if __name__ == "__main__":
+    fetch_todos()
+```
+- This ensures that the function `fetch_todos()` runs only if the script is executed directly.
+- It prevents the function from running if the script is imported into another module.
+
+---
+
+### **Example Output:**
+If the API request is successful, the script prints something like:
+
+```
+ID: 1, Title: delectus aut autem, Completed: False
+ID: 2, Title: quis ut nam facilis et officia qui, Completed: False
+ID: 3, Title: fugiat veniam minus, Completed: False
+ID: 4, Title: et porro tempora, Completed: True
+...
+```
+
+Let me know if anything needs more clarification! 😊
