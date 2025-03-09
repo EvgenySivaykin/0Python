@@ -7,4 +7,5 @@ load_dotenv()
 
 api_key = os.getenv('OPENAI_API_KEY')
 
-client = OpenAIClient(api_key)
+# client = OpenAIClient(api_key)
+print(api_key)
