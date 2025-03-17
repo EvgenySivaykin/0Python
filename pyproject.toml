@@ -1,0 +1,11 @@
+[project]
+name = "0python"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "langchain-community>=0.3.19",
+    "langchain-openai>=0.3.9",
+    "langchain-text-splitters>=0.3.6",
+]

@@ -24,4 +24,4 @@ completion = client.chat.completions.create(
 )
 
 event = completion.choices[0].message
-print(event)
+print(event)uv add --active rich
